@@ -19,21 +19,35 @@ Windows - `py -m ensurepip --upgrade`
 ## 2. Required Repos
 ### Workbench
 The Workbench repos need to be under the same parent directory.  
-**Workbench Frontend** - `git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git`  
-**Workbench API** - `git clone https://github.com/center-for-threat-informed-defense/attack-workbench-rest-api.git`  
-**Workbench Collection Manager** - `git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git`  
+**Workbench Frontend** - 
+```git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
+```
+**Workbench API** - 
+```
+git clone https://github.com/center-for-threat-informed-defense/attack-workbench-rest-api.git
+```
+**Workbench Collection Manager** - 
+```
+git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
+```  
 
-To eliminate timeoutes, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)  
-To make the Workbnech database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)
+**To eliminate timeouts, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)**  
+**To make the Workbench database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)**
 
 ### Navigator
 
-**Navigator Repo** - `git clone https://github.com/mitre-attack/attack-navigator.git`
+**Navigator Repo** - 
+```
+git clone https://github.com/mitre-attack/attack-navigator.git
+```
 
 To point Navigator at your workbench, replace `attack-navigator/nav-app/src/assests/config.json` with this [updated file](config.json)  
 
 ### Website
-**Website Repo** - `git clone https://github.com/mitre-attack/attack-website.git`
+**Website Repo** - 
+```
+git clone https://github.com/mitre-attack/attack-website.git
+```
 
 ## 3. Workbench
 ### Build docker images
