@@ -20,7 +20,8 @@ Windows - `py -m ensurepip --upgrade`
 ### Workbench
 The Workbench repos need to be under the same parent directory.  
 **Workbench Frontend** - 
-```git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
+```
+git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
 ```
 **Workbench API** - 
 ```
