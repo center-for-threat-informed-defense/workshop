@@ -1,18 +1,18 @@
 ### This repo was created for the FIRST Threat-Informed Defense workshop. Please follow these steps to ensure a successful install. 
 
 ## 1. Required Software
-### Git
+#### Git
 We recommend [GitHub Desktop](https://desktop.github.com/) for simplicity, but any git client will work
-### NodeJS
+#### NodeJS
 You can download NodeJS [here](https://nodejs.org/en/download/)
-### Angular CLI
+#### Angular CLI
 `npm install -g @angular/cli`
-### Docker Desktop
+#### Docker Desktop
 [Docker Desktop for Windows](https://docs.docker.com/desktop/windows/install/)  
 [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
-### Python
+#### Python
 Download Python [here](https://www.python.org/downloads/)
-### PIP
+#### PIP
 Mac - `$ python -m ensurepip --upgrade`  
 Windows - `py -m ensurepip --upgrade`
 
