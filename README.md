@@ -32,8 +32,8 @@ git clone https://github.com/center-for-threat-informed-defense/attack-workbench
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
 ```  
 
-**To eliminate timeouts, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)**  
-**To make the Workbench database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)**
+To eliminate timeouts, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)  
+To make the Workbench database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)
 
 ### Navigator
 
@@ -70,7 +70,7 @@ With the docker-compose running you can access the ATT&CK Workbench application 
 
 ## 4. Navigator
 ### Build the server
-1. Navigate to the `/attack-navigator/nav-app`
+1. Navigate to `/attack-navigator/nav-app`
 2. Run `npm install`
 
 ### Serve application on local machine
@@ -93,7 +93,7 @@ With the docker-compose running you can access the ATT&CK Workbench application 
 
 1. Update `navigator_link` field within `modules/site-config.py` to point to local navigator instance. This will link the website with your custom Navigator
 ```shell
-navigator_link = "../attack-navigator/nav-app"
+navigator_link = "path/to/attack-navigator/nav-app"
 ```
 2. Update local ATT&CK data:   
    `python3 update-attack.py`  
@@ -107,6 +107,7 @@ navigator_link = "../attack-navigator/nav-app"
 1. Build the docker image:
   ``` 
 docker build -t workshop_website .
+```
 2. Run a docker container:
 ```
 docker run --name attack_website -d -p 8888:80 workshop_website
