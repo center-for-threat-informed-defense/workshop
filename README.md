@@ -49,6 +49,7 @@ To point Navigator at your workbench, replace `attack-navigator/nav-app/src/asse
 ```
 git clone https://github.com/mitre-attack/attack-website.git
 ```
+To point Website at your local instance of Workbench, replace `attack-website/modules/site_config.py` with this [updated file](site_config.py)  
 
 ## 3. Workbench
 ### Build docker images
@@ -78,6 +79,7 @@ With the docker-compose running you can access the ATT&CK Workbench application 
 2. Browse to `localhost:4200` in browser
 
 ## 5. Website
+
 ### Install requirements
 
 1. Create a virtual environment: 
@@ -91,17 +93,21 @@ With the docker-compose running you can access the ATT&CK Workbench application 
 
 1. Update `navigator_link` field within `modules/site-config.py` to point to local navigator instance. This will link the website with your custom Navigator
 ```shell
-navigator_link = "../../attack-navigator/nav-app"
+navigator_link = "../attack-navigator/nav-app"
 ```
-2. Update ATT&CK markdown from the STIX content, and generate the output html from the markdown: `python3 update-attack.py`. _Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality._
+2. Update local ATT&CK data:   
+   `python3 update-attack.py`  
+   _Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality.  
 3. Serve the html to `localhost:8000`: 
     1. `cd output`
     2. `python3 -m pelican.server`
 
-### 3. Installing, building, and serving the site via Docker 
+### (Optional) Installing, building, and serving the site via Docker 
 
 1. Build the docker image:
-    - `docker build -t <your_preferred_image_name> .`
+  ``` 
+docker build -t workshop_website .
 2. Run a docker container:
-    - `docker run --name <your_preferred_container_name -d -p <your_preferred_port>:80 <image_name_from_build_command>`
-3. View the site on your preferred localhost port
+```
+docker run --name attack_website -d -p 8888:80 workshop_website
+```
