@@ -13,7 +13,7 @@ This session will leverage publicly available research developed by the [Center 
 ## Agenda
 - **Intro** A short overview of the Cetner for Threat-Informed Defense, our R&D program, and how to get involved. 
 - **Identifying ATT&CK Techniques in CTI reports:** We will read through a CTI report and see how we can turn prose into TTPs.
-- **Extending & Customizing ATT&CK** ATT&CK Workbench is a publicly available tool that allows you to extend ATT&CK by importing your own adversaries, techniques, or red team activities. We will identify each of them from the CTI report and add them into Workbench. 
+- **Extending & Customizing ATT&CK:** ATT&CK Workbench is a publicly available tool that allows you to extend ATT&CK by importing your own adversaries, techniques, or red team activities. We will identify each of them from the CTI report and add them into Workbench. 
 -- **ATT&CK Navigator** import extended ATT&CK matrix from workbench, import 800-53 controls, look at gaps.
 -- **Custom ATT&CK Website** show your extended information in traditional ATT&CK view. Website allows for more detail.
 - **Building Attack Flows with ATT&CK:**
