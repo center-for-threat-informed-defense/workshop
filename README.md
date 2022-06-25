@@ -43,43 +43,45 @@ Download Python [here](https://www.python.org/downloads/)
 Mac - `$ python -m ensurepip --upgrade`  
 Windows - `py -m ensurepip --upgrade`
 
-### 2. Required Repos
+### 2. Required Git Repositories
 #### ATT&CK Workbench
 The ATT&CK Workbench is comprised of three Git repositories. All three reposiories need to be under the same parent directory.  
 
-**ATT&CK Workbench Frontend**
+##### ATT&CK Workbench Frontend
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
 ```
-**ATT&CK Workbench API**
+##### ATT&CK Workbench API
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-rest-api.git
 ```
-**ATT&CK Workbench Collection Manager**
+##### ATT&CK Workbench Collection Manager
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
 ```  
-**ATT&CK Workbench Configuration**
+##### ATT&CK Workbench Configuration
 To eliminate timeouts, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)  
 To make the Workbench database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)
 
-### Navigator
+### ATT&CK Navigator
 
-**Navigator Repo**
+#### ATT&CK Navigator Repo
 ```
 git clone https://github.com/mitre-attack/attack-navigator.git
 ```
 
+#### ATT&CK Navigator Configuration
 To point Navigator at your workbench, replace `attack-navigator/nav-app/src/assests/config.json` with this [updated file](config.json)  
 
-### Website
-**Website Repo** 
+### Local ATT&CK Website
+#### ATT&CK  Website Repo 
 ```
 git clone https://github.com/mitre-attack/attack-website.git
 ```
+##### ATT&CK  Website Configuration
 To point Website at your local instance of Workbench, replace `attack-website/modules/site_config.py` with this [updated file](site_config.py)  
 
-## 3. Workbench
+## 3. Building ATT&CK Workbench
 ### Build docker images
 **YOU MUST START THE DOCKER DAEMON BEFORE RUNNING DOCKER COMPOSE**  
 You can do this by starting docker desktop.  
@@ -96,7 +98,7 @@ This command will build all of the necessary Docker images and run the correspon
 
 With the docker-compose running you can access the ATT&CK Workbench application by visiting the URL `localhost` in your browser.
 
-## 4. Navigator
+## 4. Building ATT&CK Navigator
 ### Build the server
 1. Navigate to `/attack-navigator/nav-app`
 2. Run `npm install`
@@ -106,7 +108,7 @@ With the docker-compose running you can access the ATT&CK Workbench application 
 1. Run `ng serve` within `/attack-navigator/nav-app`
 2. Browse to `localhost:4200` in browser
 
-## 5. Website
+## 5. Building the ATT&CK Website
 
 ### Install requirements
 
@@ -117,15 +119,16 @@ With the docker-compose running you can access the ATT&CK Workbench application 
     - macOS and Linux: `source env/bin/activate`
     - Windows: `env/Scripts/activate.bat`
 3. Install requirement packages: `pip3 install -r requirements.txt`
+
 ### Build and serve the local site
 
 1. Update `navigator_link` field within `modules/site-config.py` to point to local navigator instance. This will link the website with your custom Navigator
 ```shell
-navigator_link = "path/to/attack-navigator/nav-app"
+navigator_link = “http://localhost:4200/” 
 ```
 2. Update local ATT&CK data:   
    `python3 update-attack.py`  
-   _Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality.  
+   Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality.  
 3. Serve the html to `localhost:8000`: 
     1. `cd output`
     2. `python3 -m pelican.server`
