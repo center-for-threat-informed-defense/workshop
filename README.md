@@ -1,6 +1,6 @@
 # FIRST 2022 Threat-Informed Defense Workshop
 
-This repo was created for the FIRST Threat-Informed Defense workshop. 
+This repository was created for the FIRST Threat-Informed Defense workshop. 
 
 The workshop will start with the process of taking in new threat intel reports and identifying MITRE ATT&CK techniques. From there we will integrate the new techniques into the ATT&CK Workbench to allow us to centralize our ATT&CK-connected threat intel. We will model the intel to help us understand the full sequence of events described in the intel and develop and test approaches to mitigation.
 
@@ -11,6 +11,7 @@ This session will leverage publicly available research developed by the [Center 
 - ATT&CK Workbench - https://ctid.mitre-engenuity.org/our-work/attack-workbench/
 
 ## Agenda
+- **Intro**
 - **Turning CTI reports into ATT&CK techniques:** We will read through a CTI report and see how we can turn prose into TTPs
 - **Customizing ATT&CK with Workbench:** ATT&CK Workbench is a publicly available tool that allows you to extend ATT&CK by importing your own adversaries, techniques, or red team activities. We will identify each of them from the CTI report and add them into Workbench. 
 -- **ATT&CK Navigator** import extended ATT&CK matrix from workbench, import 800-53 controls, look at gaps
@@ -24,7 +25,7 @@ Now that we’ve identified an adversary, visualized the ATT&CK, we will show ho
 ## Software Installation
 The ATT&CK Workbench section of the agenda will require the setup and installation of the ATT&CK Workbench, a local copy of the ATT&CK Navigator, and a local copy of the ATT&CK website. 
 
-**Please follow these steps to ensure a successful install.**
+**Please follow these steps carefully to ensure a successful install.**
 
 ### 1. Required Software
 #### Git
@@ -125,6 +126,14 @@ navigator_link = "path/to/attack-navigator/nav-app"
 2. Update local ATT&CK data:   
    `python3 update-attack.py`  
    _Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality.  
+3. Serve the html to `localhost:8000`: 
+    1. `cd output`
+    2. `python3 -m pelican.server`
+
+**Refreshing website content** - to refresh the website based on modified ATT&CK Workbench data run the following commands from your ATT&CK Website directory:
+1. Stop the pelican server by pressing control-c in the terminal window for the runing website. 
+2. Update your web pages:
+   `python3 update-attack.py`
 3. Serve the html to `localhost:8000`: 
     1. `cd output`
     2. `python3 -m pelican.server`
