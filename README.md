@@ -76,8 +76,8 @@ Through git CLI:
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
 ```  
 ##### ATT&CK Workbench Configuration
-To eliminate timeouts, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)  
-To make the Workbench database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)
+To eliminate timeouts, replace `./attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)  
+To make the Workbench database persistent, replace `./attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)
 
 ### ATT&CK Navigator
 
@@ -92,7 +92,7 @@ git clone https://github.com/mitre-attack/attack-navigator.git
 ```
 
 #### ATT&CK Navigator Configuration
-To point Navigator at your workbench, replace `attack-navigator/nav-app/src/assests/config.json` with this [updated file](config.json)  
+To point Navigator at your workbench, replace `./attack-navigator/nav-app/src/assests/config.json` with this [updated file](config.json)  
 
 ### Local ATT&CK Website
 #### ATT&CK  Website Repo 
@@ -105,33 +105,36 @@ Through git CLI:
 git clone https://github.com/mitre-attack/attack-website.git
 ```
 ##### ATT&CK  Website Configuration
-To point Website at your local instance of Workbench, replace `attack-website/modules/site_config.py` with this [updated file](site_config.py)  
+To point Website at your local instance of Workbench, replace `./attack-website/modules/site_config.py` with this [updated file](site_config.py)  
 
 ## 3. Building ATT&CK Workbench
 ### Build docker images
 **YOU MUST START THE DOCKER DAEMON BEFORE RUNNING DOCKER COMPOSE**  
 You can do this by starting docker desktop.  
 
-1. Navigate to the `attack-workbench-frontend` directory (containing the `docker-compose.yml` file)
+1. Navigate to the `./attack-workbench-frontend` directory (containing the `docker-compose.yml` file)
 2. Run the command:
-```shell
+```
 docker-compose up
 ```
 
 This command will build all of the necessary Docker images and run the corresponding Docker containers.
 
-### Access Docker instance
+### Access Workbench
 
-With the docker-compose running you can access the ATT&CK Workbench application by visiting the URL `localhost` in your browser.
+With the docker-compose running you can access the ATT&CK Workbench application by visiting the URL `localhost` in your browser. To shut down Workbench, open a new terminal and run
+```
+docker-compose down
+```
 
 ## 4. Building ATT&CK Navigator
 ### Build the server
-1. Navigate to `/attack-navigator/nav-app`
+1. Navigate to `./attack-navigator/nav-app`
 2. Run `npm install`
 
 ### Serve application on local machine
 
-1. Run `ng serve` within `/attack-navigator/nav-app`
+1. Run `ng serve` within `./attack-navigator/nav-app`
 2. Browse to `localhost:4200` in browser
 
 ## 5. Building the ATT&CK Website
@@ -148,32 +151,21 @@ With the docker-compose running you can access the ATT&CK Workbench application 
 
 ### Build and serve the local site
 
-1. Update `navigator_link` field within `modules/site-config.py` to point to local navigator instance. This will link the website with your custom Navigator
-```shell
+1. Update the `navigator_link` field within `./attack-website/modules/site-config.py` to point to local navigator instance. This will link the website with your custom Navigator
+```
 navigator_link = “http://localhost:4200/” 
 ```
-2. Update local ATT&CK data:   
+1. Update local ATT&CK data:   
    `python3 update-attack.py`  
    Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality.  
-3. Serve the html to `localhost:8000`: 
+2. Serve the html to `localhost:8000`: 
     1. `cd output`
     2. `python3 -m pelican.server`
 
 **Refreshing website content** - to refresh the website based on modified ATT&CK Workbench data run the following commands from your ATT&CK Website directory:
-1. Stop the pelican server by pressing control-c in the terminal window for the runing website. 
+1. Stop the pelican server by pressing `ctrl-c` in the terminal window for the running website. 
 2. Update your web pages:
    `python3 update-attack.py`
 3. Serve the html to `localhost:8000`: 
     1. `cd output`
     2. `python3 -m pelican.server`
-
-### (Optional) Installing, building, and serving the site via Docker 
-
-1. Build the docker image:
-  ``` 
-docker build -t workshop_website .
-```
-2. Run a docker container:
-```
-docker run --name attack_website -d -p 8888:80 workshop_website
-```
