@@ -23,39 +23,55 @@ Now that we’ve identified an adversary, visualized the ATT&CK, we will show ho
 
 
 ## Software Installation
-The ATT&CK Workbench section of the agenda will require the setup and installation of the ATT&CK Workbench, a local copy of the ATT&CK Navigator, and a local copy of the ATT&CK website. 
+Parts of our workshop will require setup and installation of the ATT&CK Workbench, a local copy of the ATT&CK Navigator, and a local copy of the ATT&CK website. 
 
 **Please follow these steps carefully to ensure a successful install.**
 
-### 1. Required Software
+### 1. Download and Install the Required Software
 #### Git
 We recommend [GitHub Desktop](https://desktop.github.com/) for simplicity, but any git client will work
 #### NodeJS
 You can download NodeJS [here](https://nodejs.org/en/download/)
-#### Angular CLI
-`npm install -g @angular/cli`
 #### Docker Desktop
 [Docker Desktop for Windows](https://docs.docker.com/desktop/windows/install/)  
 [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
 #### Python
 Download Python [here](https://www.python.org/downloads/)
-#### PIP
+#### Angular CLI (installed through command line)
+`npm install -g @angular/cli`
+#### PIP (installed through command line)
 Mac - `$ python -m ensurepip --upgrade`  
 Windows - `py -m ensurepip --upgrade`
 
 ### 2. Required Git Repositories
+All repos should be under the same parent folder. 
 #### ATT&CK Workbench
-The ATT&CK Workbench is comprised of three Git repositories. All three reposiories need to be under the same parent directory.  
+The ATT&CK Workbench is comprised of three Git repositories. 
 
 ##### ATT&CK Workbench Frontend
+Through Github Desktop:  
+```
+https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
+```
+Through git CLI:
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
 ```
 ##### ATT&CK Workbench API
+Through Github Desktop:
+```
+https://github.com/center-for-threat-informed-defense/attack-workbench-rest-api.git
+```
+Through git CLI:
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-rest-api.git
 ```
 ##### ATT&CK Workbench Collection Manager
+Through Github Desktop:
+```
+https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
+```
+Through git CLI:
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
 ```  
@@ -66,6 +82,11 @@ To make the Workbench database persistent, replace `attack-workbench-frontend/do
 ### ATT&CK Navigator
 
 #### ATT&CK Navigator Repo
+Through Github Desktop:
+```
+https://github.com/mitre-attack/attack-navigator.git
+```
+Through git CLI:
 ```
 git clone https://github.com/mitre-attack/attack-navigator.git
 ```
@@ -75,6 +96,11 @@ To point Navigator at your workbench, replace `attack-navigator/nav-app/src/asse
 
 ### Local ATT&CK Website
 #### ATT&CK  Website Repo 
+Through Github Desktop:
+```
+https://github.com/mitre-attack/attack-website.git
+```
+Through git CLI:
 ```
 git clone https://github.com/mitre-attack/attack-website.git
 ```
