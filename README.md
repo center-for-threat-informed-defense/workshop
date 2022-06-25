@@ -11,15 +11,25 @@ This session will leverage publicly available research developed by the [Center 
 - ATT&CK Workbench - https://ctid.mitre-engenuity.org/our-work/attack-workbench/
 
 ## Agenda
-- **Intro**
-- **Turning CTI reports into ATT&CK techniques:** We will read through a CTI report and see how we can turn prose into TTPs
-- **Customizing ATT&CK with Workbench:** ATT&CK Workbench is a publicly available tool that allows you to extend ATT&CK by importing your own adversaries, techniques, or red team activities. We will identify each of them from the CTI report and add them into Workbench. 
--- **ATT&CK Navigator** import extended ATT&CK matrix from workbench, import 800-53 controls, look at gaps
--- **Custom ATT&CK Website** show your extended information in traditional ATT&CK view. Website allows for more detail 
-- **Turning ATT&CK into Attack Flows:**
+- **Intro** A short overview of the Cetner for Threat-Informed Defense, our R&D program, and how to get involved. 
+- **Identifying ATT&CK Techniques in CTI reports:** We will read through a CTI report and see how we can turn prose into TTPs.
+- **Extending & Customizing ATT&CK** ATT&CK Workbench is a publicly available tool that allows you to extend ATT&CK by importing your own adversaries, techniques, or red team activities. We will identify each of them from the CTI report and add them into Workbench. 
+-- **ATT&CK Navigator** import extended ATT&CK matrix from workbench, import 800-53 controls, look at gaps.
+-- **Custom ATT&CK Website** show your extended information in traditional ATT&CK view. Website allows for more detail.
+- **Building Attack Flows with ATT&CK:**
 Attack Flow creates a common language to describe and visualize a series of adversary attacks. Building off the CTI that was added to Workbench, we will build an Attack Flow to visualize the attack. 
-- **Identifying & validating security controls with ATT&CK:**
+- **Using Security Controls to Identify Gaps:**
 Now that we’ve identified an adversary, visualized the ATT&CK, we will show how to mitigate that attack with security controls, and then validate those controls with red team activities. 
+
+## Identifying ATT&CK Techniques in CTI reports
+
+### ATT&CK Powered Suit
+A Chrome extension for working with ATT&CK:
+https://chrome.google.com/webstore/detail/attck-powered-suit/gfhomppaadldngjnmbefmmiokgefjddd?hl=en&authuser=0
+
+### Example report:
+The hands-on mapping exercise will use this report:
+https://www.ic3.gov/Media/News/2021/210521.pdf
 
 
 ## Software Installation
