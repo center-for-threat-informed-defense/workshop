@@ -113,7 +113,7 @@ static_style_dir = os.path.join("attack-theme", "static", "style/")
 data_directory = "data"
 
 # Link to instance of the ATT&CK Navigator; change for to a custom location
-navigator_link = "https://mitre-attack.github.io/attack-navigator/"
+navigator_link = "http://localhost:4200/"
 
 # Content directory
 content_dir = "content/"

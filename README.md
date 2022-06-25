@@ -105,7 +105,7 @@ Through git CLI:
 git clone https://github.com/mitre-attack/attack-website.git
 ```
 ##### ATT&CK  Website Configuration
-To point Website at your local instance of Workbench, replace `./attack-website/modules/site_config.py` with this [updated file](site_config.py)  
+To point Website at your local instance of Workbench and Navigator, replace `./attack-website/modules/site_config.py` with this [updated file](site_config.py)  
 
 ## 3. Building ATT&CK Workbench
 ### Build docker images
@@ -122,7 +122,7 @@ This command will build all of the necessary Docker images and run the correspon
 
 ### Access Workbench
 
-With the docker-compose running you can access the ATT&CK Workbench application by visiting the URL `localhost` in your browser. To shut down Workbench, open a new terminal and run
+With the docker-compose running you can access the ATT&CK Workbench application by visiting the URL `localhost` in your browser. To shut down Workbench, open a new terminal to `./attack-workbench-frontend` and run
 ```
 docker-compose down
 ```
@@ -151,10 +151,6 @@ docker-compose down
 
 ### Build and serve the local site
 
-1. Update the `navigator_link` field within `./attack-website/modules/site-config.py` to point to local navigator instance. This will link the website with your custom Navigator
-```
-navigator_link = “http://localhost:4200/” 
-```
 1. Update local ATT&CK data:   
    `python3 update-attack.py`  
    Note: `update-attack.py`, has many optional command line arguments which affect the behavior of the build. Run `python3 update-attack.py -h` for a list of arguments and an explanation of their functionality.  
@@ -165,6 +161,7 @@ navigator_link = “http://localhost:4200/”
 **Refreshing website content** - to refresh the website based on modified ATT&CK Workbench data run the following commands from your ATT&CK Website directory:
 1. Stop the pelican server by pressing `ctrl-c` in the terminal window for the running website. 
 2. Update your web pages:
+   `cd ..`
    `python3 update-attack.py`
 3. Serve the html to `localhost:8000`: 
     1. `cd output`
