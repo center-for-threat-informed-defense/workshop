@@ -1,6 +1,32 @@
-### This repo was created for the FIRST Threat-Informed Defense workshop. Please follow these steps to ensure a successful install. 
+# FIRST 2022 Threat-Informed Defense Workshop
 
-## 1. Required Software
+This repo was created for the FIRST Threat-Informed Defense workshop. 
+
+The workshop will start with the process of taking in new threat intel reports and identifying MITRE ATT&CK techniques. From there we will integrate the new techniques into the ATT&CK Workbench to allow us to centralize our ATT&CK-connected threat intel. We will model the intel to help us understand the full sequence of events described in the intel and develop and test approaches to mitigation.
+
+This session will be hands on. Attendees should bring laptops that they can install and run Docker containers on. 
+
+This session will leverage publicly available research developed by the [Center for Threat-Informed Defense](https://ctid.mitre-engenuity.org/):
+- Attack Flow - https://ctid.mitre-engenuity.org/our-work/attack-flow/
+- ATT&CK Workbench - https://ctid.mitre-engenuity.org/our-work/attack-workbench/
+
+## Agenda
+- **Turning CTI reports into ATT&CK techniques:** We will read through a CTI report and see how we can turn prose into TTPs
+- **Customizing ATT&CK with Workbench:** ATT&CK Workbench is a publicly available tool that allows you to extend ATT&CK by importing your own adversaries, techniques, or red team activities. We will identify each of them from the CTI report and add them into Workbench. 
+-- **ATT&CK Navigator** import extended ATT&CK matrix from workbench, import 800-53 controls, look at gaps
+-- **Custom ATT&CK Website** show your extended information in traditional ATT&CK view. Website allows for more detail 
+- **Turning ATT&CK into Attack Flows:**
+Attack Flow creates a common language to describe and visualize a series of adversary attacks. Building off the CTI that was added to Workbench, we will build an Attack Flow to visualize the attack. 
+- **Identifying & validating security controls with ATT&CK:**
+Now that we’ve identified an adversary, visualized the ATT&CK, we will show how to mitigate that attack with security controls, and then validate those controls with red team activities. 
+
+
+## Software Installation
+The ATT&CK Workbench section of the agenda will require the setup and installation of the ATT&CK Workbench, a local copy of the ATT&CK Navigator, and a local copy of the ATT&CK website. 
+
+**Please follow these steps to ensure a successful install.**
+
+### 1. Required Software
 #### Git
 We recommend [GitHub Desktop](https://desktop.github.com/) for simplicity, but any git client will work
 #### NodeJS
@@ -16,28 +42,29 @@ Download Python [here](https://www.python.org/downloads/)
 Mac - `$ python -m ensurepip --upgrade`  
 Windows - `py -m ensurepip --upgrade`
 
-## 2. Required Repos
-### Workbench
-The Workbench repos need to be under the same parent directory.  
-**Workbench Frontend** - 
+### 2. Required Repos
+#### ATT&CK Workbench
+The ATT&CK Workbench is comprised of three Git repositories. All three reposiories need to be under the same parent directory.  
+
+**ATT&CK Workbench Frontend**
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-frontend.git
 ```
-**Workbench API** - 
+**ATT&CK Workbench API**
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-rest-api.git
 ```
-**Workbench Collection Manager** - 
+**ATT&CK Workbench Collection Manager**
 ```
 git clone https://github.com/center-for-threat-informed-defense/attack-workbench-collection-manager.git
 ```  
-
+**ATT&CK Workbench Configuration**
 To eliminate timeouts, replace `attack-workbench-frontend/nginx/nginx.conf` with this updated [.conf file](nginx.conf)  
 To make the Workbench database persistent, replace `attack-workbench-frontend/docker-compose.yml` with this [updated file](docker-compose.yml)
 
 ### Navigator
 
-**Navigator Repo** - 
+**Navigator Repo**
 ```
 git clone https://github.com/mitre-attack/attack-navigator.git
 ```
@@ -45,7 +72,7 @@ git clone https://github.com/mitre-attack/attack-navigator.git
 To point Navigator at your workbench, replace `attack-navigator/nav-app/src/assests/config.json` with this [updated file](config.json)  
 
 ### Website
-**Website Repo** - 
+**Website Repo** 
 ```
 git clone https://github.com/mitre-attack/attack-website.git
 ```
