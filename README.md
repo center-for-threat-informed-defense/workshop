@@ -21,7 +21,7 @@ Attack Flow creates a common language to describe and visualize a series of adve
 - **Using Security Controls to Identify Gaps:**
 Now that we’ve identified an adversary, visualized the ATT&CK, we will show how to mitigate that attack with security controls, and then validate those controls with red team activities. 
 
-## Identifying ATT&CK Techniques in CTI reports
+## Identifying ATT&CK Techniques in CTI reports - resources
 
 ### ATT&CK Powered Suit
 A Chrome extension for working with ATT&CK:
@@ -31,8 +31,7 @@ https://chrome.google.com/webstore/detail/attck-powered-suit/gfhomppaadldngjnmbe
 The hands-on mapping exercise will use this report:
 https://www.ic3.gov/Media/News/2021/210521.pdf
 
-
-## Software Installation
+## Extending & Customizing ATT&CK - Software Installation
 Parts of our workshop will require setup and installation of the ATT&CK Workbench, a local copy of the ATT&CK Navigator, and a local copy of the ATT&CK website. 
 
 **Please follow these steps carefully to ensure a successful install.**
