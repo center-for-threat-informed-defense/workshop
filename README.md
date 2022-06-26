@@ -38,6 +38,8 @@ Parts of our workshop will require setup and installation of the ATT&CK Workbenc
 ATT&CK Navigator Layer from NIST 800-53 Mappings - nist800_53_r5 overview
 https://raw.githubusercontent.com/center-for-threat-informed-defense/attack-control-framework-mappings/main/frameworks/attack_10_1/nist800_53_r5/layers/nist800-53-r5-overview.json
 
+
+## Software Installation
 **Please follow these steps carefully to ensure a successful install.**
 
 ### 1. Download and Install the Required Software
