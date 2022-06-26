@@ -149,14 +149,14 @@ docker-compose down
 ## 5. Building the ATT&CK Website
 
 ### Install requirements
-
-1. Create a virtual environment: 
+1. Navigate to `./attack-website`
+2. Create a virtual environment: 
     - macOS and Linux: `python3 -m venv env`
     - Windows: `py -m venv env`
-2. Activate the virtual environment: 
+3. Activate the virtual environment: 
     - macOS and Linux: `source env/bin/activate`
     - Windows: `env/Scripts/activate.bat`
-3. Install requirement packages: `pip3 install -r requirements.txt`
+4. Install requirement packages: `pip3 install -r requirements.txt`
 
 ### Build and serve the local site
 
